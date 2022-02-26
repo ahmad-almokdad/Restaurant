@@ -445,7 +445,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 #hero h2 span {
-  color: #fbc361;
+  color: #e7bb6d;
 }
 #hero p {
   width: 80%;
@@ -870,7 +870,7 @@ section {
   margin-top: 50px;
 }
 .menu .menu-img {
-  width: 70px;
+  width: 100px;
   border-radius: 50%;
   float: left;
   border: 5px solid rgba(255, 255, 255, 0.2);
@@ -913,7 +913,7 @@ section {
   color: #cda45e;
 }
 .menu .menu-ingredients {
-  margin-left: 85px;
+  margin-left: 130px;
   font-style: italic;
   font-size: 14px;
   font-family: "Poppins", sans-serif;
