@@ -26,6 +26,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'namespace' => 'admin
     Route::resource('slider', 'SliderController');
     Route::resource('category', 'CategoryController');
     Route::resource('item', 'ItemController');
+
+
+    Route::get('gallary/create','GallaryController@create');
+    Route::post('gallary/store','GallaryController@store');
+    Route::get('gallary/delete','GallaryController@delete');
 });
 
 
@@ -34,7 +39,8 @@ Route::group(
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ],
-    function () {  
-        Route::get('/', 'HomeController@index')->name('welcome'); 
+    function () { 
+        Route::get('/', 'HomeController@index')->name('welcome');
+        Route::get('/gallary','GallaryController@index');
     }
 );
