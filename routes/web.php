@@ -17,7 +17,7 @@ Route::post('/reservation', 'ReservationController@reserve')->name('reservation.
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
 //Admin Group Router
 Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'namespace' => 'admin'], function () {

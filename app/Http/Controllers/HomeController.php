@@ -26,7 +26,7 @@ class HomeController extends Controller
         $sliders = Slider::all();
         $categories = Category::all();
         $items = Item::all();
-        return view('welcome',compact('sliders','categories','items'));
+        return view('index',compact('sliders','categories','items'));
 
 
     }
