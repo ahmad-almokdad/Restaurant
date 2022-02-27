@@ -246,6 +246,9 @@
             <ul id="menu-flters">
               
               <li data-filter="*" class="filter-active">All</li>
+              @foreach ($categories as $item)
+              <li data-filter=".filter-starters">{{$item->name_ar}}</li>
+              @endforeach
               <li data-filter=".filter-starters">Starters</li>
               <li data-filter=".filter-salads">Salads</li>
               <li data-filter=".filter-specialty">Specialty</li>
