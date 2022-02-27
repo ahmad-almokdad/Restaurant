@@ -25,9 +25,11 @@ class HomeController extends Controller
     {
         $sliders = Slider::all();
         $categories = Category::all();
-        $items = Item::all();
-        return view('index',compact('sliders','categories','items'));
-
-
+        $items = Item::all([
+            'category_id', 'name_' . app()->getLocale().' As name',
+            'description_' . app()->getLocale().' As description', 'price', 'image'
+        ]);
+       
+        return view('index', compact('sliders', 'categories', 'items'));
     }
 }

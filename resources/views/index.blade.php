@@ -266,10 +266,10 @@
 <div class="col-lg-6 menu-item filter-starters">
   <img src="uploads/item/{{$item->image}}" class="menu-img" alt="">
   <div class="menu-content">
-    <a href="#">{{$item->name_ }} </a><span>{{$item->price}} AED</span>
+    <a href="#">{{$item->name }} </a><span>{{$item->price}} AED</span>
   </div>
   <div class="menu-ingredients">
-    {{$item->description_ar}}
+    {{$item->description}}
   </div>
 </div>
 @endforeach
