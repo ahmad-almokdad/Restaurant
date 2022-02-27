@@ -24,12 +24,17 @@ Auth::routes();
 // Route::get('/home', 'HomeController@index')->name('home');
 
 //Admin Group Router
-Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'namespace' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'namespace' => 'Admin'], function () {
 
     Route::get('dashboard', 'DashboardController@index')->name('admin.dashboard');
     Route::resource('slider', 'SliderController');
     Route::resource('category', 'CategoryController');
     Route::resource('item', 'ItemController');
+
+
+    Route::get('gallary/create','GallaryController@create');
+    Route::post('gallary/store','GallaryController@store');
+    Route::get('gallary/delete','GallaryController@delete');
 });
 
 
@@ -40,5 +45,6 @@ Route::group(
     ],
     function () { 
         Route::get('/', 'HomeController@index')->name('welcome');
+        Route::get('/gallary','GallaryController@index');
     }
 );
