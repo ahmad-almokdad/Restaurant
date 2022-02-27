@@ -114,14 +114,16 @@ class ItemController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required',
-            'description' =>'required',
+            'name_ar' => 'required',
+            'name_en' => 'required',
+            'description_ar' =>'required',
+            'description_en' =>'required',
             'price' =>'required',
-            'category' =>'required',
+            'category' =>'required',            
         ]);
         $item =Item::find($id);
         $image = $request->file('image');
-        $slug = str_slug($request->name);
+        $slug = str_slug($request->name_ar);
         if(isset($image)){
 
             $currentdate = Carbon::now()->toDateString();
@@ -138,9 +140,11 @@ class ItemController extends Controller
             $imagename = $item->image;
         }
 
-        $item->name = $request->name;
+        $item->name_ar = $request->name_ar;
+        $item->name_en = $request->name_en;
         $item->price = $request->price;
-        $item->description = $request->description;
+        $item->description_ar = $request->description_ar;
+        $item->description_en = $request->description_en;
         $item->category_id = $request->category;
         $item->image = $imagename;
         $item->save();

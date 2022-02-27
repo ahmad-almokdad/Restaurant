@@ -85,12 +85,14 @@ class CategoryController extends Controller
     {
 
         $this->validate($request, [
-            'name' => 'required',
+            'name_ar' => 'required',
+            'name_en' => 'required',
 
         ]);
         $category = Category::find($id);
-        $category->name = $request->name;
-        $category->slug = str_slug($request->name);
+        $category->name_ar = $request->name_ar;
+        $category->name_en = $request->name_en;
+        $category->slug = str_slug($request->name_ar);
         $category->save();
         return redirect()->route('category.index')->with('successMsg','Category Successfully Updated');
     }
