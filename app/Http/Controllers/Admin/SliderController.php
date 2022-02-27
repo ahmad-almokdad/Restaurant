@@ -41,7 +41,8 @@ class SliderController extends Controller
         $this->validate($request, [
             'title_ar' => 'required',
             'title_en' => 'required',
-            'sub_title' => 'required',
+            'sub_title_ar' => 'required',
+            'sub_title_en' => 'required',
             'image' => 'required|mimes:jpeg,jpg,png',
 
         ]);
