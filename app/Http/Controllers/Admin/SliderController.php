@@ -110,8 +110,10 @@ class SliderController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'title' => 'required',
-            'sub_title' => 'required',
+            'title_ar' => 'required',
+            'title_en' => 'required',
+            'sub_title_ar' => 'required',
+            'sub_title_en' => 'required',
             'image' => 'mimes:jpeg,jpg,png',
 
         ]);
@@ -135,8 +137,10 @@ class SliderController extends Controller
 
         }
 
-        $slider->title = $request->title;
-        $slider->sub_title = $request->sub_title;
+        $slider->title_ar = $request->title_ar;
+        $slider->title_en = $request->title_en;
+        $slider->sub_title_ar = $request->sub_title_ar;
+        $slider->sub_title_en = $request->sub_title_en;
         $slider->image = $imagename;
         $slider->save();
         return redirect()->route('slider.index')->with('successMsg','Slider Successfully Updated');
