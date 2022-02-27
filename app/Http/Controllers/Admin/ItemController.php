@@ -43,7 +43,8 @@ class ItemController extends Controller
         $this->validate($request, [
             'name_ar' => 'required',
             'name_en' =>'required',
-            'description' =>'required',
+            'description_ar' =>'required',
+            'description_en' =>'required',
             'image' => 'required|mimes:jpeg,jpg,png,bmp',
             'price' =>'required',
             'category' =>'required',
