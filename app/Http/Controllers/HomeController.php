@@ -23,8 +23,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $sliders = Slider::all();
-        $categories = Category::all();
+        $sliders = Slider::all([
+            'title_'.app()->getLocale().' As title','sub_title_'.app()->getLocale().' As sub_title',
+            'image'
+        ]);
+        $categories = Category::all([
+            'id','name_'.app()->getLocale().' As name',
+        ]);
         $items = Item::all([
             'category_id', 'name_' . app()->getLocale().' As name',
             'description_' . app()->getLocale().' As description', 'price', 'image'
