@@ -13,6 +13,10 @@
 
 // Route::get('/', 'HomeController@index')->name('welcome');
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+
 Route::post('/reservation', 'ReservationController@reserve')->name('reservation.reserve');
 
 Auth::routes();

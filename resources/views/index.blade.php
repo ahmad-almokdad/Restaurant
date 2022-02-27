@@ -39,7 +39,7 @@
 
       <div class="contact-info d-flex align-items-center">
         <i class="bi bi-phone d-flex align-items-center"><span>+971 544444444</span></i>
-        <i class="bi bi-clock d-flex align-items-center ms-4"><span> Mon-Sat: 11AM - 23PM</span></i>
+        <i class="bi bi-clock d-flex align-items-center ms-4"><span> 11AM - 23PM</span></i>
       </div>
 
       <div class="languages d-none d-md-flex align-items-center">
@@ -112,13 +112,17 @@
           <div class="carousel-item" style="background-image: url(assets/img/event-birthday.jpg);">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown"><span>Lorem Ipsum Dolor</span> </h2>
+                <h2 class="animate__animated animate__fadeInDown"><span>Delicious</span> </h2>
                 <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
                 <div>
                   <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
                   <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
                 </div>
+                <div class=" d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
+                  <a href="https://www.youtube.com/watch?v=u6BOC7CDUTQ" class="glightbox play-btn"></a>
+                </div>
               </div>
+              
             </div>
           </div>
 
@@ -126,13 +130,17 @@
           <div class="carousel-item" style="background-image: url(assets/img/about-bg.jpg);">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown"><span> Sequi ea ut et est quaerat</span></h2>
+                <h2 class="animate__animated animate__fadeInDown"><span>Delicious</span> </h2>
                 <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
                 <div>
                   <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
                   <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
                 </div>
+                <div class=" d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
+                  <a href="https://www.youtube.com/watch?v=u6BOC7CDUTQ" class="glightbox play-btn"></a>
+                </div>
               </div>
+              
             </div>
           </div>
 
@@ -238,6 +246,9 @@
             <ul id="menu-flters">
               
               <li data-filter="*" class="filter-active">All</li>
+              @foreach ($categories as $item)
+              <li data-filter=".filter-starters">{{$item->name_ar}}</li>
+              @endforeach
               <li data-filter=".filter-starters">Starters</li>
               <li data-filter=".filter-salads">Salads</li>
               <li data-filter=".filter-specialty">Specialty</li>
