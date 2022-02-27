@@ -43,8 +43,9 @@ class CategoryController extends Controller
         ]);
 
         $category = new Category();
-        $category->name = $request->name;
-        $category->slug = str_slug($request->name);
+        $category->name_ar = $request->name_ar;
+        $category->name_en = $request->name_en;
+        $category->slug = str_slug($request->name_en);
         $category->save();
         return redirect()->route('category.index')->with('successMsg','Categoey Successfully Added');
     }
