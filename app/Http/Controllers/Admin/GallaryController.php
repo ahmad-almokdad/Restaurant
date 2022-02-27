@@ -23,7 +23,7 @@ class GallaryController extends Controller
     {
         $gallary = new Gallary();
         $image = $request->file('image');
-        $destinationPathImg = public_path('upload/gallary/');
+        $destinationPathImg = public_path('uploads/gallary/');
         if (!$image->move($destinationPathImg, $image->getClientOriginalName())) {
             return 'Error saving the file.';
         }
