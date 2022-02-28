@@ -22,7 +22,6 @@ class ReservationController extends Controller
      $this->validate($request ,[
          'name' => 'required',
          'phone' => 'required',
-         'email' => 'required|email',
          'num_of_people' => 'required',
          'dateandtime' => 'required',
          'messege' => 'required'
@@ -32,7 +31,6 @@ class ReservationController extends Controller
      $reservation = new Reservation();
 
      $reservation->name =$request->name;
-     $reservation->email =$request->email;
      $reservation->phone =$request->phone;
      $reservation->num_of_people = $request->num_of_people;
      $reservation->messege =$request->messege ;

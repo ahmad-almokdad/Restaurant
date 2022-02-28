@@ -11,7 +11,7 @@ class GallaryController extends Controller
     public function index()
     {
         $images = Gallary::all();
-        return view('gallary', compact('images'));
+        return view('admin.gallary', compact('images'));
     }
 
     public function create()
