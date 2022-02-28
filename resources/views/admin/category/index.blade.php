@@ -3,50 +3,76 @@
 @section ( 'title', 'Category')
 
 @push('css')
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+     
+      <!-- Custom styles for this template -->
+      <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
+  
+      <!-- Custom styles for this page -->
+      <link href="{{asset('vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
 
     @endpush
 
 @section('content')
 
-    <div class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <a class="btn btn-primary" href="{{ route('category.create') }}">Add New</a>
-                    @include('layouts.partial.msg')
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <a class="btn btn-primary" href="{{ route('item.create') }}">Add New Category</a>
+                @include('layouts.partial.msg')
 
-                    <div class="card">
-                        <div class="card-header card-header-primary">
-                            <h4 class="card-title ">All Categories</h4>
-                        </div>
-                            <div class="card-content table-responsive">
-                                <table id="table" class="table" cellspacing="0" width="100%">
-                                    <thead class=" text-primary">
-                                    <th>
-                                        ID
-                                    </th>
-                                    <th>
-                                        Name in En
-                                    </th>
-                                    <th>
-                                        Name in Ar
-                                    </th>
-                                    <th>
-                                        Updated At
-                                    </th>
-                                    <th>
-                                        Action
-                                    </th>
-                                    </thead>
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title ">All Items</h4>
+
+                        
+                    </div>
+                        <div class="card-content table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                ID
+                                            </th>
+                                            <th>
+                                                Name in En
+                                            </th>
+                                            <th>
+                                                Name in Ar
+                                            </th>
+                                        
+                                            <th>
+                                                Action
+                                            </th>
+                                        </tr>
+                                      </thead>
+                                      <tfoot>
+                                        <tr>
+                                            <th>
+                                                ID
+                                            </th>
+                                            <th>
+                                                Name in En
+                                            </th>
+                                            <th>
+                                                Name in Ar
+                                            </th>
+                                     
+                                            <th>
+                                                Action
+                                            </th>
+                                        </tr>
+                                      </tfoot>
+                                 
 
                                     @foreach( $categories as $key=>$category )
                                         <tr>
                                             <td> {{$key +1 }}</td>
                                             <td> {{  $category->name_en }}</td>
                                             <td> {{  $category->name_ar }}</td>
-                                            <td> {{ $category->updated_at }}</td>
+                                  
 
                                             <td>
                                                 <a href="{{ route('category.edit',$category->id) }}" class="btn btn-info btn-sm"><i class="material-icons">mode_edit</i></a>
@@ -65,36 +91,118 @@
 
 
                                         </tr>
-                                        @endforeach
+                                    @endforeach
                                 </table>
-                            </div>
+                        </div>
 
-                    </div>
                 </div>
-
             </div>
+
         </div>
     </div>
 
     @endsection
 
 @push('scripts')
- <!-- Custom scripts for all pages-->
- <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
+ 
+      <!-- Bootstrap core JavaScript-->
+      <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
+      <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  
 
- <!-- Page level plugins -->
- <script src="{{asset('vendor/datatables/jquery.dataTables.min.js')}}"></script>
- <script src="{{asset('vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+  
+      <!-- Custom scripts for all pages-->
+      <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
+  
+      <!-- Page level plugins -->
+      <script src="{{asset('vendor/datatables/jquery.dataTables.min.js')}}"></script>
+      <script src="{{asset('vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+  
+      <!-- Page level custom scripts -->
+      <script src="{{asset('js/demo/datatables-demo.js')}}"></script>
 
- <!-- Page level custom scripts -->
- <script src="{{asset('js/demo/datatables-demo.js')}}"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            $('#table').DataTable();
-        } );
-    </script>
-
-
+      
+  
     @endpush
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+  
+ 
+  
+
+      
+  

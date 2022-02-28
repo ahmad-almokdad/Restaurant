@@ -1,1 +1,162 @@
-@extends(' layouts.app')@section ( 'title', 'Item')@push('css')    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    @endpush@section('content')    <div class="content">        <div class="container-fluid">            <div class="row">                <div class="col-md-12">                    <a class="btn btn-primary" href="{{ route('item.create') }}">Add New Item</a>                    @include('layouts.partial.msg')                    <div class="card">                        <div class="card-header card-header-primary">                            <h4 class="card-title ">All Items</h4>                        </div>                            <div class="card-content table-responsive">                                <table id="table" class="table" cellspacing="0" width="100%">                                    <thead class=" text-primary">                                    <th>                                        ID                                    </th>                                    <th>                                        Name                                    </th>                                    <th>                                        Image                                    </th>                                    <th>                                        Category                                    </th>                                    <th>                                        Price                                    </th>                                    <th>                                        Description                                    </th>                                    <th>                                        Updated At                                    </th>                                    <th>                                        Action                                    </th>                                    </thead>                                    @foreach( $items as $key=>$item )                                        <tr>                                            <td> {{$key +1 }}</td>                                            <td> {{  $item->name }}</td>                                            <td> <img class="img-thumbnail img-responsive"                                                      src="{{asset('uploads/item/'.$item->image)}}" style="height: 50px; width:70px" alt=""></td>                                            <td> {{  $item->category->name }}</td>                                            <td> {{  $item->price }}</td>                                            <td> {{  $item->description }}</td>                                            <td> {{ $item->updated_at }}</td>                                            <td>                                                <a href="{{ route('item.edit',$item->id) }}" class="btn btn-info btn-sm"><i class="material-icons">mode_edit</i></a>                                                <form id="delete-form-{{ $item->id }}" action="{{ route('item.destroy',$item->id) }}" style="display: none;" method="POST">                                                    @csrf                                                    @method('DELETE')                                                </form>                                                <button type="button" class="btn btn-danger btn-sm" onclick="if(confirm('Are you sure? You want to delete this?')){                                                        event.preventDefault();                                                        document.getElementById('delete-form-{{ $item->id }}').submit();                                                        }else {                                                        event.preventDefault();                                                        }"><i class="material-icons">delete</i></button>                                            </td>                                        </tr>                                        @endforeach                                </table>                            </div>                    </div>                </div>            </div>        </div>    </div>    @endsection@push('scripts')    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>    <script>        $(document).ready(function() {            $('#table').DataTable();        } );    </script>    @endpush
+@extends(' layouts.app')
+
+@section ( 'title', 'Item')
+
+@push('css')
+
+     
+      <!-- Custom styles for this template -->
+      <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
+  
+      <!-- Custom styles for this page -->
+      <link href="{{asset('vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+
+@endpush
+
+
+@section('content')
+
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <a class="btn btn-primary" href="{{ route('item.create') }}">Add New Item</a>
+                    @include('layouts.partial.msg')
+
+                    <div class="card">
+                        <div class="card-header card-header-primary">
+                            <h4 class="card-title ">All Items</h4>
+                        </div>
+                            <div class="card-content table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                ID
+                                            </th>
+                                            <th>
+                                                Name In En
+                                            </th>
+                                            <th>
+                                                Name In Ar
+                                            </th>
+                                            <th>
+                                                Image
+                                            </th>
+                                            <th>
+                                                Category
+                                            </th>
+                                            <th>
+                                                Price
+                                            </th>
+                                            <th>
+                                                Description in En
+                                            </th>
+                                            <th>
+                                                Description in Ar
+                                            </th>
+                                         
+                                            <th>
+                                                Action
+                                            </th>
+                                        </tr>
+                                      </thead>
+                                      <tfoot>
+                                        <tr>
+                                            <th>
+                                                ID
+                                            </th>
+                                            <th>
+                                                Name In En
+                                            </th>
+                                            <th>
+                                                Name In Ar
+                                            </th>
+                                            <th>
+                                                Image
+                                            </th>
+                                            <th>
+                                                Category
+                                            </th>
+                                            <th>
+                                                Price
+                                            </th>
+                                            <th>
+                                                Description in En
+                                            </th>
+                                            <th>
+                                                Description in Ar
+                                            </th>
+                                        
+                                            <th>
+                                                Action
+                                            </th>
+                                        </tr>
+                                      </tfoot>
+                               
+
+                                    @foreach( $items as $key=>$item )
+                                        <tr>
+                                            <td> {{$key +1 }}</td>
+                                            <td> {{  $item->name_en }}</td>
+                                            <td> {{  $item->name_ar }}</td>
+                                            <td> <img class="img-thumbnail img-responsive"
+                                                      src="{{asset('uploads/item/'.$item->image)}}" style="height: 50px; width:70px" alt=""></td>
+                                            <td> {{  $item->category->name_en }}</td>
+                                            <td> {{  $item->price }}</td>
+                                            <td> {{  $item->description_en }}</td>
+                                            <td> {{  $item->description_ar }}</td>
+                                        
+
+                                            <td>
+                                                <a href="{{ route('item.edit',$item->id) }}" class="btn btn-info btn-sm"><i class="material-icons">mode_edit</i></a>
+
+                                                <form id="delete-form-{{ $item->id }}" action="{{ route('item.destroy',$item->id) }}" style="display: none;" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                </form>
+                                                <button type="button" class="btn btn-danger btn-sm" onclick="if(confirm('Are you sure? You want to delete this?')){
+                                                        event.preventDefault();
+                                                        document.getElementById('delete-form-{{ $item->id }}').submit();
+                                                        }else {
+                                                        event.preventDefault();
+                                                        }"><i class="material-icons">delete</i></button>
+                                            </td>
+
+
+                                        </tr>
+                                        @endforeach
+                                </table>
+                            </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    @endsection
+
+    @push('scripts')
+ 
+    <!-- Bootstrap core JavaScript-->
+    <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+
+
+    <!-- Custom scripts for all pages-->
+    <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
+
+    <!-- Page level plugins -->
+    <script src="{{asset('vendor/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="{{asset('js/demo/datatables-demo.js')}}"></script>
+
+    
+
+  @endpush
