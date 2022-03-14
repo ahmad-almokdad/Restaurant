@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Patron Restaurant</title>
+  <title>Baron Restaurant</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -63,7 +63,7 @@
   <header id="header" class="fixed-top d-flex align-items-cente">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
 
-      <h1 class="logo me-auto me-lg-0"><a href="index.html">Patron</a></h1>
+      <h1 class="logo me-auto me-lg-0"><a href="index.html">Baron</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -232,7 +232,7 @@
 
         <div class="section-title">
           <h2>Menu</h2>
-          <p>Our Menu In Patron</p>
+          <p>Our Menu In Baron</p>
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -658,7 +658,7 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="footer-info">
-              <h3>Patron</h3>
+              <h3>Baron</h3>
               <p>
                 A108 Adam Street <br>
                 NY 535022, USA<br><br>
@@ -718,7 +718,7 @@
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/Patron-restaurant-template/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/Baron-restaurant-template/ -->
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>

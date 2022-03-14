@@ -10,7 +10,7 @@
 
 <h1 style="font-size: 50px;  text-align: center;
  color: #1c294e;margin-top: 50px;  font-weight: bold;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" >Welcome To Patron Dashboard</h1>
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" >Welcome To Baron Dashboard</h1>
     <div class="content">
         <div class="container-fluid">
             <div class="row">

@@ -4,7 +4,7 @@
 
     <div class="logo">
         <a class="simple-text logo-normal">
-           Patron
+           Baron
         </a>
     </div>
     <div class="sidebar-wrapper">
