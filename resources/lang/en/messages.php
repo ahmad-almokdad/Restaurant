@@ -3,8 +3,9 @@
 return [
     'home'=>'Home',
     'about'=>'About',
-    'menu'=>'Menu',
+    'menu'=>'Our Menu',
     'gallery'=>'Gallery',
     'contact'=>'Contact',
-    'Reservation'=>'Reservation a Table Now',
+    'Reservation'=>'Reservation Now',
+    'Baron'=>'Baron'
 ];

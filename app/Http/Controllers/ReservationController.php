@@ -9,11 +9,7 @@ use Illuminate\Http\Request;
 class ReservationController extends Controller
 {
 
-    public function index()
-    {
-        $reservations = Reservation::all();
-        return view('admin.reservation.reservation');
-    }
+
 
 
  public function reserve(Request $request)
@@ -23,7 +19,8 @@ class ReservationController extends Controller
          'name' => 'required',
          'phone' => 'required',
          'num_of_people' => 'required',
-         'dateandtime' => 'required',
+          'dateandtime' => 'required',
+        // 'date_time' =>'required',
          'messege' => 'required'
 
      ]);
@@ -34,14 +31,14 @@ class ReservationController extends Controller
      $reservation->phone =$request->phone;
      $reservation->num_of_people = $request->num_of_people;
      $reservation->messege =$request->messege ;
-     $reservation->date_and_time =$request->dateandtime;
-     $reservation->status =false;
+     $reservation->date_time =$request->dateandtime;
+     $reservation->status =0;
      $reservation->save();
 
-     Toastr::success('Reservation Invitattion sent Successfully and We will confirm Shortly',
-         'Success',["positionClass" => "toast-top-right"]);
+    //  Toastr::success('شكرا لك .. تم ارسال طلب الحجز بنجاح سنقوم بتأكيد الطلب قريبا يرجى الانتظار',
+    //      'l',["positionClass" => "toast-top-right"]);
 
-     return redirect()->back(); 
+     return redirect()->back()->with('message','شكرا لك .. تم ارسال طلب الحجز بنجاح سنقوم بتأكيد الطلب قريبا يرجى الانتظار'); 
 
  }
  

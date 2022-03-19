@@ -7,7 +7,7 @@ return [
 'menu'=>'قائمة الطعام',
 'gallery'=>'معرض الصور',
 'contact'=>'التواصل',
-'Reservation'=>'أحجز طاولتك
- الآن',
+'Reservation'=>'احجز الآن',
+'Baron'=>'بارون'
 
 ];

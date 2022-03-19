@@ -74,7 +74,7 @@ class ItemController extends Controller
         $item->image = $imagename;
         $item->save();
 
-        return redirect()->route('item.index')->with('successMsg','Item Successfully Added');
+        return redirect()->route('item.index')->with('successMsg','تمت اضافة المنتج بنجاح');
 
 
 
@@ -148,7 +148,7 @@ class ItemController extends Controller
         $item->category_id = $request->category;
         $item->image = $imagename;
         $item->save();
-        return redirect()->route('item.index')->with('successMsg','Item Successfully Updated');
+        return redirect()->route('item.index')->with('successMsg','تم تعديل المنتج بنجاح');
     }
 
     /**
@@ -162,6 +162,6 @@ class ItemController extends Controller
         $item = Item::find($id);
         unlink('uploads/item/'.$item->image);
         $item->delete();
-        return redirect()->back()->with('successMsg','Item Successfully Deleted');
+        return redirect()->back()->with('successMsg','تم حذف المنتج بنجاح');
     }
 }

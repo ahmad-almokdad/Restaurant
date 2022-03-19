@@ -21,11 +21,11 @@
 
                     <div class="card">
                         <div class="card-header card-header-primary">
-                            <h4 class="card-title ">Add New Category</h4>
+                            <h4 class="card-title ">Add New Image</h4>
                         </div>
                         <div class="card-content ">
                            
-                            <form action="{{url('admin/gallary/store')}}" method="post" enctype="multipart/form-data">
+                            <form action="{{route('gallery.store')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                            
                                 <div class="row">

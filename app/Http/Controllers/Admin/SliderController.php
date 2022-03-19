@@ -72,7 +72,7 @@ class SliderController extends Controller
         $slider->sub_title_en = $request->sub_title_en;
         $slider->image = $imagename;
         $slider->save();
-        return redirect()->route('slider.index')->with('successMsg','Slider Successfully Saved');
+        return redirect()->route('slider.index')->with('successMsg','تمت اضافة السلايد بنجاح');
 
 
     }
@@ -143,7 +143,7 @@ class SliderController extends Controller
         $slider->sub_title_en = $request->sub_title_en;
         $slider->image = $imagename;
         $slider->save();
-        return redirect()->route('slider.index')->with('successMsg','Slider Successfully Updated');
+        return redirect()->route('slider.index')->with('successMsg','تم تعديل السلايد بنجاح');
     }
 
     /**
@@ -158,8 +158,7 @@ class SliderController extends Controller
         if(file_exists('uploads/slider/'.$slider->image)){
             unlink('uploads/slider/'.$slider->image);
         }
-
         $slider->delete();
-        return redirect()->back()->with('successMsg','Successfully Deleted');
+        return redirect()->back()->with('successMsg','تم حذف السلايد بنجاح');
     }
 }

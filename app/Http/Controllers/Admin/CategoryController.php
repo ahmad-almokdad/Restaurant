@@ -48,7 +48,7 @@ class CategoryController extends Controller
         $category->name_en = $request->name_en;
         $category->slug = str_slug($request->name_en);
         $category->save();
-        return redirect()->route('category.index')->with('successMsg','Categoey Successfully Added');
+        return redirect()->route('category.index')->with('successMsg','تمت اضافة الفئة بنجاح');
     }
 
     /**
@@ -94,7 +94,7 @@ class CategoryController extends Controller
         $category->name_en = $request->name_en;
         $category->slug = str_slug($request->name_ar);
         $category->save();
-        return redirect()->route('category.index')->with('successMsg','Category Successfully Updated');
+        return redirect()->route('category.index')->with('successMsg','تم تعديل الفئة بنجاح');
     }
 
     /**
@@ -107,6 +107,6 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         $category->delete();
-        return redirect()->back()->with('successMsg','Category Successfully Deleted');
+        return redirect()->back()->with('successMsg','تم حذف الفئة بنجاح');
     }
 }

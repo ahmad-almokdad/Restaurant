@@ -59,11 +59,13 @@
     </div>
   </div>
 
+ 
+
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-cente">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
 
-      <h1 class="logo me-auto me-lg-0"><a href="index.html">Baron</a></h1>
+      <h1 class="logo me-auto me-lg-0"><a href="index.html">{{__('messages.Baron')}}</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -104,11 +106,11 @@
                 <h2 class="animate__animated animate__fadeInDown"><span>{{$sliders[0]['title']}}</span> </h2>
                 <p class="animate__animated animate__fadeInUp">{{$sliders[0]['sub_title']}}.</p>
                 <div>
-                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
-                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
+                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">{{__('messages.menu')}}</a>
+                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">{{__('messages.Reservation')}}</a>
                 </div>
                 <div class=" d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
-                  <a href="https://www.youtube.com/watch?v=u6BOC7CDUTQ" class="glightbox play-btn"></a>
+                  <a href="https://youtu.be/KVfJfL8Jfmk" class="glightbox play-btn"></a>
                 </div>
               </div>
               
@@ -123,8 +125,8 @@
                 <h2 class="animate__animated animate__fadeInDown"><span>{{$item->title}}</span> </h2>
                 <p class="animate__animated animate__fadeInUp">{{$item->sub_title}}.</p>
                 <div>
-                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
-                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
+                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">{{__('messages.menu')}}</a>
+                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">{{__('messages.Reservation')}}</a>
                 </div>
                 <div class=" d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
                   <a href="https://www.youtube.com/watch?v=u6BOC7CDUTQ" class="glightbox play-btn"></a>
@@ -367,6 +369,7 @@
 
 
     <!-- ======= Book A Table Section ======= -->
+
     <section id="book-a-table" class="book-a-table">
       <div class="container" data-aos="fade-up">
 
@@ -375,33 +378,7 @@
           <p>Reservation a Table</p>
         </div>
 
-
-
-
-
-
-
-         
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-        <form action="{{route('reservation.reserve')}}" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+        <form action="{{route('reservation.reserve')}}" method="post" role="form" class="email-form" data-aos="fade-up" data-aos-delay="100">
           @csrf
           <div class="row">
             <div class="col-lg-4 col-md-6 form-group">
@@ -414,26 +391,44 @@
               <div class="validate"></div>
             </div>
             <div class="col-lg-4 col-md-6 form-group ">
-              <input type="datetime-local" name="dateandtime" class="form-control" id="dateandtime" placeholder="Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+          
+             
+              <input type="text" placeholder="Select Date" name="dateandtime" class="form-control" id="date"  onfocus="(this.type='datetime-local')">
      
             </div>
            
             <div class="col-lg-4 col-md-6 form-group mt-3">
-              <input type="number" class="form-control" name="num_of_people" id="num_of_people" placeholder="Num of people" data-rule="minlen:1" data-msg="Please enter at least 1 chars">
+              <input type="number" class="form-control" name="num_of_people" id="num_of_people" placeholder="# of people" data-rule="minlen:1" data-msg="Please enter at least 1 chars">
               <div class="validate"></div>
             </div>
+
             <div class="col-lg-4 col-md-6 form-group mt-3">
-              <textarea class="form-control" name="messege" rows="1" placeholder="Message"></textarea>
+              <select class="form-control" aria-label="Default select example">
+                <option selected>Reservation Type</option>
+                <option value="1">Dinner</option>
+                <option value="2">private</option>
+                <option value="3">Birthday</option>
+                <option value="3">Vip</option>
+              </select>
+              </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3">
+              <textarea class="form-control" name="messege" rows="3" placeholder="Message"></textarea>
               <div class="validate"></div>
             </div>
+
+
+            
           </div>
          
           
-          <button type="submit">Book a Table</button>
+          <div class="text-center"><button type="submit">Reservation a Table</button></div>
         </form>
 
       </div>
-    </section><!-- End Book A Table Section -->
+    </section>
+
+
+    <!-- End Book A Table Section -->
 
 
 
@@ -450,70 +445,18 @@
       <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row g-0">
+@foreach ($images as $item)
+<div class="col-lg-3 col-md-4">
+  <div class="gallery-item">
+    <a href="uploads/gallery/{{$item->url}}" class="gallery-lightbox" data-gall="gallery-item">
+      <img src="uploads/gallery/{{$item->url}}" alt="" class="img-fluid">
+    </a>
+  </div>
+</div>
+@endforeach
+         
 
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-1.jpg" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="assets/img/gallery/gallery-1.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-2.jpg" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="assets/img/gallery/gallery-2.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-3.jpg" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="assets/img/gallery/gallery-3.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-4.jpg" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-5.jpg" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="assets/img/gallery/gallery-5.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-6.jpg" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="assets/img/gallery/gallery-6.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-7.jpg" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="assets/img/gallery/gallery-7.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-8.jpg" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="assets/img/gallery/gallery-8.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
+         
 
         </div>
 
@@ -737,6 +680,8 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  
+
 
 </body>
 

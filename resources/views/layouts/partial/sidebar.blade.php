@@ -15,6 +15,19 @@
                     <p>Dashboard</p>
                 </a>
             </li>
+            
+            <li class="{{Request:: is('admin/slider') ? 'active' :''}} ">
+                <a class="nav-link" href="{{route('curr.index')}}">
+                    <i class="material-icons">assignment_turned_in</i>
+                    <p>reservation</p>
+                </a>
+            </li>
+            <li class="{{Request:: is('admin/slider') ? 'active' :''}} ">
+                <a class="nav-link" href="{{route('done.index')}}">
+                    <i class="material-icons">assignment</i>
+                    <p>Done Reservation</p>
+                </a>
+            </li>
             <li class="{{Request:: is('admin/slider') ? 'active' :''}} ">
                 <a class="nav-link" href="{{route('slider.index')}}">
                     <i class="material-icons">slideshow</i>
@@ -37,11 +50,12 @@
             </li>
 
             <li class="{{Request:: is('admin/slider') ? 'active' :''}} ">
-                <a class="nav-link" href="{{route('slider.index')}}">
+                <a class="nav-link" href="{{route('gallery.index')}}">
                     <i class="material-icons">crop_original</i>
                     <p>Gallery</p>
                 </a>
             </li>
+
             
         </ul>
     </div>

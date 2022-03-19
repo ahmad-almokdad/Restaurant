@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Gallery;
 use App\Item;
 use App\Slider;
 use Illuminate\Http\Request;
@@ -27,6 +28,8 @@ class HomeController extends Controller
             'title_'.app()->getLocale().' As title','sub_title_'.app()->getLocale().' As sub_title',
             'image'
         ]);
+        $images = Gallery::all();
+
         $categories = Category::all([
             'id','name_'.app()->getLocale().' As name',
         ]);
@@ -35,6 +38,6 @@ class HomeController extends Controller
             'description_' . app()->getLocale().' As description', 'price', 'image'
         ]);
        
-        return view('index', compact('sliders', 'categories', 'items'));
+        return view('index', compact('sliders', 'categories', 'items','images'));
     }
 }
