@@ -26,6 +26,7 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Playfair Display", serif;
+  
 }
 
 /*--------------------------------------------------------------
@@ -180,12 +181,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
   letter-spacing: 1px;
   text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
+  
 }
 #header .logo a {
   color: #fff;
-  font-family:'Times New Roman', Times, serif;
-  letter-spacing: 1ch;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  
 }
 #header .logo img {
   max-height: 40px;
@@ -717,7 +718,7 @@ section {
 # About
 --------------------------------------------------------------*/
 .about {
-  background: url("../img/about-bg.jpg") center center;
+  background: url("../img/gallery/1647680078133.jpg") center center;
   background-size: cover;
   position: relative;
   padding: 80px 0;
